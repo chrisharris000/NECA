@@ -12,6 +12,10 @@ Therefore, numbering of questions, answers and feedback will not necessarily mat
 
 Another 'bug' is that this character (Â) appears sometimes, and without
 looking too indepth, it's just easier to not worry about them unless necessary
+
+Thoughts for improvement:
+first look at question type (e.g. multichoice, truefalse) , so that it can be stored and empty spaces can be
+inserted if a question is not scrapable.
 '''
 
 
