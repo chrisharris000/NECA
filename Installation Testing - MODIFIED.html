@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="learnbookApp">
+ <head>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <title>
+   Installation Testing
+  </title>
+  <link href="//necatraining.learnbook.com.au/pluginfile.php/1/theme_learnbook/favicon/1518474804/NECA%20Only%20Logo.jpg" rel="shortcut icon"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="" name="description">
+   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="moodle, Installation Testing" name="keywords">
+     <link href="https://necatraining.learnbook.com.au/theme/yui_combo.php?3.17.2/cssreset/cssreset-min.css&amp;3.17.2/cssfonts/cssfonts-min.css&amp;3.17.2/cssgrids/cssgrids-min.css&amp;3.17.2/cssbase/cssbase-min.css" rel="stylesheet" type="text/css"/>
+     <link href="https://necatraining.learnbook.com.au/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" rel="stylesheet" type="text/css"/>
+     <script id="firstthemesheet" type="text/css">
+      /** Required in order to fix style inclusion problems in IE with YUI **/
+     </script>
+     <link href="https://necatraining.learnbook.com.au/theme/styles.php/learnbook/1518474804/all" rel="stylesheet" type="text/css"/>
+     <script type="text/javascript">
+      //<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/necatraining.learnbook.com.au","sesskey":"sJHeFiNCoA","loadingicon":"https:\/\/necatraining.learnbook.com.au\/theme\/image.php\/learnbook\/core\/1518474804\/i\/loading_small","themerev":"1518474804","slasharguments":1,"theme":"learnbook","jsrev":"1518474804","admin":"admin","svgicons":true};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''};if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else me.path=component+'/'+component+'.'+me.type};
+YUI_config = {"debug":false,"base":"https:\/\/necatraining.learnbook.com.au\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/necatraining.learnbook.com.au\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/necatraining.learnbook.com.au\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/necatraining.learnbook.com.au\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/necatraining.learnbook.com.au\/theme\/yui_combo.php?m\/1518474804\/","combine":true,"comboBase":"https:\/\/necatraining.learnbook.com.au\/theme\/yui_combo.php?","ext":false,"root":"m\/1518474804\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-formautosubmit":{"requires":["base","event-key"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-formchangechecker":{"requires":["base","event-focus"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core_availability-form":{"requires":["base","node","event","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-calendar-info":{"requires":["base","node","event-mouseenter","event-key","overlay","moodle-calendar-info-skin"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-toolboxes":{"requires":["node","base","event-key","node","io","moodle-course-coursebase","moodle-course-util"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-passwordunmask":{"requires":["node","base"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-core_message-deletemessage":{"requires":["node","event"]},"moodle-core_message-messenger":{"requires":["escape","handlebars","io-base","moodle-core-notification-ajaxexception","moodle-core-notification-alert","moodle-core-notification-dialogue","moodle-core-notification-exception"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_ddimageortext-form":{"requires":["moodle-qtype_ddimageortext-dd","form_filepicker"]},"moodle-qtype_ddimageortext-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-qtype_ddmarker-dd":{"requires":["node","event-resize","dd","dd-drop","dd-constrain","graphics"]},"moodle-qtype_ddmarker-form":{"requires":["moodle-qtype_ddmarker-dd","form_filepicker","graphics","escape"]},"moodle-qtype_ddwtos-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-quizquestionbank":{"requires":["base","event","node","io","io-form","yui-later","moodle-question-qbankmanager","moodle-core-notification-dialogue"]},"moodle-mod_quiz-randomquestion":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-block_navigation-navigation":{"requires":["base","io-base","node","event-synthetic","event-delegate","json-parse"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-button":{"requires":["moodle-editor_atto-plugin","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/necatraining.learnbook.com.au\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/necatraining.learnbook.com.au\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1518474804\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/necatraining.learnbook.com.au\/lib\/javascript.php\/1518474804\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker"]},"core_question_flags":{"name":"core_question_flags","fullpath":"https:\/\/necatraining.learnbook.com.au\/lib\/javascript.php\/1518474804\/question\/flags.js","requires":["base","dom","event-delegate","io-base"]},"core_question_engine":{"name":"core_question_engine","fullpath":"https:\/\/necatraining.learnbook.com.au\/lib\/javascript.php\/1518474804\/question\/qengine.js","requires":["node","event"]},"mod_quiz":{"name":"mod_quiz","fullpath":"https:\/\/necatraining.learnbook.com.au\/lib\/javascript.php\/1518474804\/mod\/quiz\/module.js","requires":["base","dom","event-delegate","event-key","core_question_engine","moodle-core-formchangechecker"]}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+     </script>
+     <script src="https://necatraining.learnbook.com.au/theme/learnbook/bower_components/angular/angular.js">
+     </script>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="format-topics path-mod path-mod-quiz safari dir-ltr lang-en yui-skin-sam yui3-skin-sam necatraining-learnbook-com-au pagelayout-incourse course-93 context-4691 cmid-538 category-54 side-pre-only has_custom_menu" id="page-mod-quiz-review">
+  <div class="skiplinks">
+   <a class="skip" href="#maincontent">
+    Skip to main content
+   </a>
+  </div>
+  <script src="https://necatraining.learnbook.com.au/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js&amp;rollup/1518474804/mcore-min.js" type="text/javascript">
+  </script>
+  <script src="https://necatraining.learnbook.com.au/theme/jquery.php/core/jquery-1.11.3.min.js" type="text/javascript">
+  </script>
+  <script src="https://necatraining.learnbook.com.au/theme/jquery.php/core/ui-1.11.4/jquery-ui.min.js" type="text/javascript">
+  </script>
+  <link href="https://necatraining.learnbook.com.au/theme/jquery.php/core/ui-1.11.4/theme/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <script src="https://necatraining.learnbook.com.au/lib/javascript.php/1518474804/lib/javascript-static.js" type="text/javascript">
+  </script>
+  <script src="https://necatraining.learnbook.com.au/lib/javascript.php/1518474804/blocks/slideshow/js/responsiveslides.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   //<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+  </script>
+  <div id="page">
+   <!-- END OF HEADER -->
+   <div class="row-fluid" id="page-content-top">
+    <aside class="block-region" data-blockregion="header" data-droptarget="1" id="block-region-header">
+    </aside>
+   </div>
+   <!-- START OF HEADER -->
+   <div class="headermenu">
+   </div>
+   <!--  BOOTSTRAP RESPONSIVE -->
+   <div class="container" id="page-content-wrapper">
+    <div class="row" id="page-content">
+     <div class="col-md-9">
+      <div role="main">
+       <span id="maincontent">
+       </span>
+       <table class="generaltable generalbox quizreviewsummary">
+        <tbody>
+         <tr>
+          <th class="cell" scope="row">
+           Started on
+          </th>
+          <td class="cell">
+           Thursday, 26 April 2018, 12:54 PM
+          </td>
+         </tr>
+         <tr>
+          <th class="cell" scope="row">
+           State
+          </th>
+          <td class="cell">
+           Finished
+          </td>
+         </tr>
+         <tr>
+          <th class="cell" scope="row">
+           Completed on
+          </th>
+          <td class="cell">
+           Thursday, 26 April 2018, 12:58 PM
+          </td>
+         </tr>
+         <tr>
+          <th class="cell" scope="row">
+           Time taken
+          </th>
+          <td class="cell">
+           3 mins 45 secs
+          </td>
+         </tr>
+         <tr>
+          <th class="cell" scope="row">
+           Grade
+          </th>
+          <td class="cell">
+           <b>
+            9.00
+           </b>
+           out of 14.00 (
+           <b>
+            64
+           </b>
+           %)
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <form action="https://necatraining.learnbook.com.au/mod/quiz/review.php?attempt=1224" class="questionflagsaveform" method="post">
+        <div>
+         <div class="que match deferredfeedback correct" id="q1">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             1
+            </span>
+           </h3>
+           <div class="state">
+            Correct
+           </div>
+           <div class="grade">
+            Mark 1.00 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:1_:flagged" type="hidden" value="0"/>
+            <input id="q5134:1_:flaggedcheckbox" name="q5134:1_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24091&amp;qubaid=5134&amp;qid=4796&amp;slot=1&amp;checksum=08f9eb1408a988f96524939d1d8f70f7&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:1_:flaggedcheckbox" id="q5134:1_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:1_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23&amp;id=4796">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:1_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing
+              </strong>
+              - Mandatory Testing
+             </p>
+             <p>
+              In addition to Visual Verification, AS/NZS 3000 requires you to perform six Mandatory Tests.
+             </p>
+             <p>
+              <strong>
+               Match
+              </strong>
+              Â Test description with the equivalent Mandatory Test.
+             </p>
+             <p>
+              Â
+             </p>
+            </div>
+            <div class="ablock">
+             <table class="answer">
+              <tbody>
+               <tr class="r0">
+                <td class="text">
+                 <p>
+                  1.Â  A test of the main earthing conductor, protective earthing conductors and equipotential bonds to prove they are continuous and the resistance is as prescribed in AS/NZS 3000.
+                 </p>
+                 <p>
+                  Â
+                 </p>
+                </td>
+                <td class="control correct">
+                 <label class="accesshide" for="menuq5134:1_sub0">
+                  Answer 1
+                 </label>
+                 <select class="select menuq5134:1_sub0" disabled="disabled" id="menuq5134:1_sub0" name="q5134:1_sub0">
+                  <option value="0">
+                   Choose...
+                  </option>
+                  <option value="1">
+                   Operation of RCD's
+                  </option>
+                  <option value="2">
+                   Fault Loop Impedance Test
+                  </option>
+                  <option selected="selected" value="3">
+                   Earth Continuity Test
+                  </option>
+                  <option value="4">
+                   Insulation Resistance Test (IRT)
+                  </option>
+                  <option value="5">
+                   Correct Cicuit Connection Testing
+                  </option>
+                  <option value="6">
+                   Polarity
+                  </option>
+                 </select>
+                 <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+                </td>
+               </tr>
+               <tr class="r1">
+                <td class="text">
+                 <p>
+                  2. Testing the condition of the insulation on a cable, by applying a voltage between all active conductors and earth.
+                 </p>
+                 <p>
+                  Â
+                 </p>
+                </td>
+                <td class="control correct">
+                 <label class="accesshide" for="menuq5134:1_sub1">
+                  Answer 2
+                 </label>
+                 <select class="select menuq5134:1_sub1" disabled="disabled" id="menuq5134:1_sub1" name="q5134:1_sub1">
+                  <option value="0">
+                   Choose...
+                  </option>
+                  <option value="1">
+                   Operation of RCD's
+                  </option>
+                  <option value="2">
+                   Fault Loop Impedance Test
+                  </option>
+                  <option value="3">
+                   Earth Continuity Test
+                  </option>
+                  <option selected="selected" value="4">
+                   Insulation Resistance Test (IRT)
+                  </option>
+                  <option value="5">
+                   Correct Cicuit Connection Testing
+                  </option>
+                  <option value="6">
+                   Polarity
+                  </option>
+                 </select>
+                 <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+                </td>
+               </tr>
+               <tr class="r0">
+                <td class="text">
+                 <p>
+                  3. De-energised testing to confirm the correct identification and connection of all active, neutral and earth conductors, to remove hazards of transposition of conductors
+                 </p>
+                 <p>
+                  Â
+                 </p>
+                 <p>
+                  Â
+                 </p>
+                 <p>
+                  Â
+                 </p>
+                </td>
+                <td class="control correct">
+                 <label class="accesshide" for="menuq5134:1_sub2">
+                  Answer 3
+                 </label>
+                 <select class="select menuq5134:1_sub2" disabled="disabled" id="menuq5134:1_sub2" name="q5134:1_sub2">
+                  <option value="0">
+                   Choose...
+                  </option>
+                  <option value="1">
+                   Operation of RCD's
+                  </option>
+                  <option value="2">
+                   Fault Loop Impedance Test
+                  </option>
+                  <option value="3">
+                   Earth Continuity Test
+                  </option>
+                  <option value="4">
+                   Insulation Resistance Test (IRT)
+                  </option>
+                  <option value="5">
+                   Correct Cicuit Connection Testing
+                  </option>
+                  <option selected="selected" value="6">
+                   Polarity
+                  </option>
+                 </select>
+                 <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+                </td>
+               </tr>
+               <tr class="r1">
+                <td class="text">
+                 <p>
+                  4. De-energised test to prove the operation of the circuit operates in the manner intended.
+                 </p>
+                 <p>
+                  Â
+                 </p>
+                </td>
+                <td class="control correct">
+                 <label class="accesshide" for="menuq5134:1_sub3">
+                  Answer 4
+                 </label>
+                 <select class="select menuq5134:1_sub3" disabled="disabled" id="menuq5134:1_sub3" name="q5134:1_sub3">
+                  <option value="0">
+                   Choose...
+                  </option>
+                  <option value="1">
+                   Operation of RCD's
+                  </option>
+                  <option value="2">
+                   Fault Loop Impedance Test
+                  </option>
+                  <option value="3">
+                   Earth Continuity Test
+                  </option>
+                  <option value="4">
+                   Insulation Resistance Test (IRT)
+                  </option>
+                  <option selected="selected" value="5">
+                   Correct Cicuit Connection Testing
+                  </option>
+                  <option value="6">
+                   Polarity
+                  </option>
+                 </select>
+                 <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+                </td>
+               </tr>
+               <tr class="r0">
+                <td class="text">
+                 <p>
+                  5. Testing to determine the correct operation of circuit protective devices in the prescribed time under fault conditions to prevent a dangerous touch voltage.
+                  <br/>
+                  This test may be conducted on an energised circuit, with appropriate test equipment and procedures.
+                 </p>
+                 <p>
+                  Â
+                 </p>
+                </td>
+                <td class="control correct">
+                 <label class="accesshide" for="menuq5134:1_sub4">
+                  Answer 5
+                 </label>
+                 <select class="select menuq5134:1_sub4" disabled="disabled" id="menuq5134:1_sub4" name="q5134:1_sub4">
+                  <option value="0">
+                   Choose...
+                  </option>
+                  <option value="1">
+                   Operation of RCD's
+                  </option>
+                  <option selected="selected" value="2">
+                   Fault Loop Impedance Test
+                  </option>
+                  <option value="3">
+                   Earth Continuity Test
+                  </option>
+                  <option value="4">
+                   Insulation Resistance Test (IRT)
+                  </option>
+                  <option value="5">
+                   Correct Cicuit Connection Testing
+                  </option>
+                  <option value="6">
+                   Polarity
+                  </option>
+                 </select>
+                 <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+                </td>
+               </tr>
+               <tr class="r1">
+                <td class="text">
+                 <p>
+                  6. Test the performance and operation of RCD's.Â
+                 </p>
+                 <p>
+                  Â
+                 </p>
+                </td>
+                <td class="control correct">
+                 <label class="accesshide" for="menuq5134:1_sub5">
+                  Answer 6
+                 </label>
+                 <select class="select menuq5134:1_sub5" disabled="disabled" id="menuq5134:1_sub5" name="q5134:1_sub5">
+                  <option value="0">
+                   Choose...
+                  </option>
+                  <option selected="selected" value="1">
+                   Operation of RCD's
+                  </option>
+                  <option value="2">
+                   Fault Loop Impedance Test
+                  </option>
+                  <option value="3">
+                   Earth Continuity Test
+                  </option>
+                  <option value="4">
+                   Insulation Resistance Test (IRT)
+                  </option>
+                  <option value="5">
+                   Correct Cicuit Connection Testing
+                  </option>
+                  <option value="6">
+                   Polarity
+                  </option>
+                 </select>
+                 <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+                </td>
+               </tr>
+              </tbody>
+             </table>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is correct.
+              </p>
+             </div>
+             <div class="rightanswer">
+              The correct answer is: 1.Â  A test of the main earthing conductor, protective earthing conductors and equipotential bonds to prove they are continuous and the resistance is as prescribed in AS/NZS 3000. â€“ Earth Continuity Test, 2. Testing the condition of the insulation on a cable, by applying a voltage between all active conductors and earth. â€“ Insulation Resistance Test (IRT), 3. De-energised testing to confirm the correct identification and connection of all active, neutral and earth conductors, to remove hazards of transposition of conductors â€“ Polarity, 4. De-energised test to prove the operation of the circuit operates in the manner intended. â€“ Correct Cicuit Connection Testing, 5. Testing to determine the correct operation of circuit protective devices in the prescribed time under fault conditions to prevent a dangerous touch voltage.
+              <br/>
+              This test may be conducted on an energised circuit, with appropriate test equipment and procedures. â€“ Fault Loop Impedance Test, 6. Test the performance and operation of RCD's. â€“ Operation of RCD's
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback partiallycorrect" id="q2">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             2
+            </span>
+           </h3>
+           <div class="state">
+            Partially correct
+           </div>
+           <div class="grade">
+            Mark 0.25 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:2_:flagged" type="hidden" value="0"/>
+            <input id="q5134:2_:flaggedcheckbox" name="q5134:2_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24092&amp;qubaid=5134&amp;qid=4819&amp;slot=2&amp;checksum=8a9253336321a1da0577db0405aba704&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:2_:flaggedcheckbox" id="q5134:2_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:2_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q2&amp;id=4819">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:2_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing -
+              </strong>
+              Safety
+             </p>
+             <p>
+              When testing an installation what hazards need to be considered: -
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one or more:
+             </div>
+             <div class="answer">
+              <div class="r0">
+               <input disabled="disabled" id="q5134:2_choice0" name="q5134:2_choice0" type="checkbox" value="1"/>
+               <label for="q5134:2_choice0">
+                a. Energised (live) testing be limited to RCD operation and Fault Loop Impedance testing, with approved procedures and appropriate PPE.
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:2_choice1" name="q5134:2_choice1" type="checkbox" value="1"/>
+               <label for="q5134:2_choice1">
+                b. Application of Insulation Resistance Test (IRT) voltages may affect others in the workplace.
+               </label>
+              </div>
+              <div class="r0 correct">
+               <input checked="checked" disabled="disabled" id="q5134:2_choice2" name="q5134:2_choice2" type="checkbox" value="1"/>
+               <label for="q5134:2_choice2">
+                c. De-energised testing is to be conducted on a circuit that is isolated and proven de-energised
+               </label>
+               <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:2_choice3" name="q5134:2_choice3" type="checkbox" value="1"/>
+               <label for="q5134:2_choice3">
+                d. Testing adjacent circuits which may be live and require additional control measures such as insulation, screens or barriers.
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is partially correct.
+              </p>
+             </div>
+             <div class="numpartscorrect">
+              You have correctly selected 1.
+             </div>
+             <div class="rightanswer">
+              The correct answer is: De-energised testing is to be conducted on a circuit that is isolated and proven de-energised, Energised (live) testing be limited to RCD operation and Fault Loop Impedance testing, with approved procedures and appropriate PPE., Application of Insulation Resistance Test (IRT) voltages may affect others in the workplace., Testing adjacent circuits which may be live and require additional control measures such as insulation, screens or barriers.
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback correct" id="q3">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             3
+            </span>
+           </h3>
+           <div class="state">
+            Correct
+           </div>
+           <div class="grade">
+            Mark 1.00 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:3_:flagged" type="hidden" value="0"/>
+            <input id="q5134:3_:flaggedcheckbox" name="q5134:3_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24093&amp;qubaid=5134&amp;qid=4801&amp;slot=3&amp;checksum=7ff397229ade343cd3c99ea81c5a2e0c&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:3_:flaggedcheckbox" id="q5134:3_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:3_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q3&amp;id=4801">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:3_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing
+              </strong>
+              - Australian Standards
+             </p>
+             <p>
+              Which Australian / New Zealand Standard specifies the requirements for Electrical Installations â€“ Testing and Verification Guidelines?
+             </p>
+             <p>
+              Â  Â  Â
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one:
+             </div>
+             <div class="answer">
+              <div class="r0">
+               <input disabled="disabled" id="q5134:3_answer0" name="q5134:3_answer" type="radio" value="0"/>
+               <label for="q5134:3_answer0">
+                a. AS/NZS 3008.1.1
+               </label>
+              </div>
+              <div class="r1 correct">
+               <input checked="checked" disabled="disabled" id="q5134:3_answer1" name="q5134:3_answer" type="radio" value="1"/>
+               <label for="q5134:3_answer1">
+                b. AS/NZS 3017
+               </label>
+               <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:3_answer2" name="q5134:3_answer" type="radio" value="2"/>
+               <label for="q5134:3_answer2">
+                c. AS/NZS 3012
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:3_answer3" name="q5134:3_answer" type="radio" value="3"/>
+               <label for="q5134:3_answer3">
+                d. AS/NZS 3000
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is correct.
+              </p>
+             </div>
+             <div class="rightanswer">
+              The correct answer is: AS/NZS 3017
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback correct" id="q4">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             4
+            </span>
+           </h3>
+           <div class="state">
+            Correct
+           </div>
+           <div class="grade">
+            Mark 1.00 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:4_:flagged" type="hidden" value="0"/>
+            <input id="q5134:4_:flaggedcheckbox" name="q5134:4_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24094&amp;qubaid=5134&amp;qid=4802&amp;slot=4&amp;checksum=df3f7731798440e1c82da816925348af&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:4_:flaggedcheckbox" id="q5134:4_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:4_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q4&amp;id=4802">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:4_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing -
+              </strong>
+              Mandatory Testing
+             </p>
+             <p>
+              Â Â Â Â Â  Which of the following instruments is suitable for testing the insulation resistance of a final sub-circuit fixed wiring?
+             </p>
+             <p>
+              <img alt="" height="193" src="https://necatraining.learnbook.com.au/pluginfile.php/4441/question/questiontext/5134/4/4802/Simple%20circuit%20%284%29.PNG" width="423"/>
+             </p>
+             <p>
+              Â  Â  Â
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one:
+             </div>
+             <div class="answer">
+              <div class="r0">
+               <input disabled="disabled" id="q5134:4_answer0" name="q5134:4_answer" type="radio" value="0"/>
+               <label for="q5134:4_answer0">
+                a. Ohmmeter
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:4_answer1" name="q5134:4_answer" type="radio" value="1"/>
+               <label for="q5134:4_answer1">
+                b. Fault-Loop Impedance Meter
+               </label>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:4_answer2" name="q5134:4_answer" type="radio" value="2"/>
+               <label for="q5134:4_answer2">
+                c. Test Lamps
+               </label>
+              </div>
+              <div class="r1 correct">
+               <input checked="checked" disabled="disabled" id="q5134:4_answer3" name="q5134:4_answer" type="radio" value="3"/>
+               <label for="q5134:4_answer3">
+                d. 500V DC IR Tester
+               </label>
+               <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:4_answer4" name="q5134:4_answer" type="radio" value="4"/>
+               <label for="q5134:4_answer4">
+                e. 250V DC IR Tester
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:4_answer5" name="q5134:4_answer" type="radio" value="5"/>
+               <label for="q5134:4_answer5">
+                f. Multimeter
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is correct.
+              </p>
+             </div>
+             <div class="rightanswer">
+              The correct answer is: 500V DC IR Tester
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback incorrect" id="q5">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             5
+            </span>
+           </h3>
+           <div class="state">
+            Incorrect
+           </div>
+           <div class="grade">
+            Mark 0.00 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:5_:flagged" type="hidden" value="0"/>
+            <input id="q5134:5_:flaggedcheckbox" name="q5134:5_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24095&amp;qubaid=5134&amp;qid=4803&amp;slot=5&amp;checksum=51cd0af0240ac8400b2c975d85a5e6b3&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:5_:flaggedcheckbox" id="q5134:5_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:5_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q5&amp;id=4803">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:5_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing
+              </strong>
+              - Fault Loop ImpedanceÂ Table 8.2
+             </p>
+             <p>
+              <img alt="" height="701" src="https://necatraining.learnbook.com.au/pluginfile.php/4441/question/questiontext/5134/5/4803/Extract%20As3000%20Table%208.2.png" width="636"/>
+             </p>
+             <p>
+              Using the information in the table determine what is the maximum earth resistance (Re) permitted for a final subcircuit, when wired in 4mmÂ² TPS on a 32 A Type C breaker, tested when supply is not available. (Resistance in Ohms - Re)
+             </p>
+             <p>
+              Â
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one:
+             </div>
+             <div class="answer">
+              <div class="r0">
+               <input disabled="disabled" id="q5134:5_answer0" name="q5134:5_answer" type="radio" value="0"/>
+               <label for="q5134:5_answer0">
+                a. 0.71
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:5_answer1" name="q5134:5_answer" type="radio" value="1"/>
+               <label for="q5134:5_answer1">
+                b. 0.5
+               </label>
+              </div>
+              <div class="r0 incorrect">
+               <input checked="checked" disabled="disabled" id="q5134:5_answer2" name="q5134:5_answer" type="radio" value="2"/>
+               <label for="q5134:5_answer2">
+                c. 0.23
+               </label>
+               <img alt="Incorrect" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_incorrect"/>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:5_answer3" name="q5134:5_answer" type="radio" value="3"/>
+               <label for="q5134:5_answer3">
+                d. 0.38
+               </label>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:5_answer4" name="q5134:5_answer" type="radio" value="4"/>
+               <label for="q5134:5_answer4">
+                e. 1.22
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is incorrect.
+              </p>
+             </div>
+             <div class="rightanswer">
+              The correct answer is: 0.38
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback incorrect" id="q6">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             6
+            </span>
+           </h3>
+           <div class="state">
+            Incorrect
+           </div>
+           <div class="grade">
+            Mark 0.00 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:6_:flagged" type="hidden" value="0"/>
+            <input id="q5134:6_:flaggedcheckbox" name="q5134:6_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24096&amp;qubaid=5134&amp;qid=4800&amp;slot=6&amp;checksum=d2bd1c234d62640b1e428019978dccb3&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:6_:flaggedcheckbox" id="q5134:6_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:6_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q6&amp;id=4800">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:6_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing
+              </strong>
+              - Insulation Resistance Testing
+             </p>
+             <p>
+              What is the minimum Insulation Resistance value for a final sub-circuit incorporating a sheathed heating element?Â
+             </p>
+             <p>
+              An example of a sheathed heating element is a water heater element.
+             </p>
+             <p>
+              Â
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one:
+             </div>
+             <div class="answer">
+              <div class="r0">
+               <input disabled="disabled" id="q5134:6_answer0" name="q5134:6_answer" type="radio" value="0"/>
+               <label for="q5134:6_answer0">
+                a. 50 MegaÂ  Ohms
+               </label>
+              </div>
+              <div class="r1 incorrect">
+               <input checked="checked" disabled="disabled" id="q5134:6_answer1" name="q5134:6_answer" type="radio" value="1"/>
+               <label for="q5134:6_answer1">
+                b. 100 Kilo Ohms
+               </label>
+               <img alt="Incorrect" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_incorrect"/>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:6_answer2" name="q5134:6_answer" type="radio" value="2"/>
+               <label for="q5134:6_answer2">
+                c. 10 Kilo Ohms
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:6_answer3" name="q5134:6_answer" type="radio" value="3"/>
+               <label for="q5134:6_answer3">
+                d. 0.5 Ohms
+               </label>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:6_answer4" name="q5134:6_answer" type="radio" value="4"/>
+               <label for="q5134:6_answer4">
+                e. 1 Mega Ohms
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is incorrect.
+              </p>
+             </div>
+             <div class="rightanswer">
+              The correct answer is: 10 Kilo Ohms
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback partiallycorrect" id="q7">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             7
+            </span>
+           </h3>
+           <div class="state">
+            Partially correct
+           </div>
+           <div class="grade">
+            Mark 0.25 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:7_:flagged" type="hidden" value="0"/>
+            <input id="q5134:7_:flaggedcheckbox" name="q5134:7_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24097&amp;qubaid=5134&amp;qid=4824&amp;slot=7&amp;checksum=79a7d37f247d8dcc12b2d11b1f6d8a69&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:7_:flaggedcheckbox" id="q5134:7_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:7_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q7&amp;id=4824">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:7_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing
+              </strong>
+              - Independent or Temporary Earth
+             </p>
+             <p>
+              When energising an installation (or part of an installation), it is important to use an Independent earth as a reference for test voltages, to determine the correct polarity of mains and sub-mains.Â
+             </p>
+             <p>
+              Â
+             </p>
+             <p>
+              Why is this such an important test procedure?Â Â
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one or more:
+             </div>
+             <div class="answer">
+              <div class="r0">
+               <input disabled="disabled" id="q5134:7_choice0" name="q5134:7_choice0" type="checkbox" value="1"/>
+               <label for="q5134:7_choice0">
+                a. It ensures the Multiple Earthed neutral (MEN) connection is not above earth potential That is; a transpose Active to Neutral (Note: Single phase)
+               </label>
+              </div>
+              <div class="r1 correct">
+               <input checked="checked" disabled="disabled" id="q5134:7_choice1" name="q5134:7_choice1" type="checkbox" value="1"/>
+               <label for="q5134:7_choice1">
+                b. It proves there is no potential difference between the Neutral and Earth
+               </label>
+               <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:7_choice2" name="q5134:7_choice2" type="checkbox" value="1"/>
+               <label for="q5134:7_choice2">
+                c. It proves that the installation's earthing system is not energised.
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:7_choice3" name="q5134:7_choice3" type="checkbox" value="1"/>
+               <label for="q5134:7_choice3">
+                d. It ensures that the potential difference between Phase and Earth (Ground) is correct, with no transposed active conductors.
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is partially correct.
+              </p>
+             </div>
+             <div class="numpartscorrect">
+              You have correctly selected 1.
+             </div>
+             <div class="rightanswer">
+              The correct answer is: It proves that the installation's earthing system is not energised., It proves there is no potential difference between the Neutral and Earth, It ensures that the potential difference between Phase and Earth (Ground) is correct, with no transposed active conductors., It ensures the Multiple Earthed neutral (MEN) connection is not above earth potential That is; a transpose Active to Neutral (Note: Single phase)
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback incorrect" id="q8">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             8
+            </span>
+           </h3>
+           <div class="state">
+            Incorrect
+           </div>
+           <div class="grade">
+            Mark 0.00 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:8_:flagged" type="hidden" value="0"/>
+            <input id="q5134:8_:flaggedcheckbox" name="q5134:8_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24098&amp;qubaid=5134&amp;qid=4798&amp;slot=8&amp;checksum=6aad800a222944967f117d441be7c576&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:8_:flaggedcheckbox" id="q5134:8_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:8_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q8&amp;id=4798">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:8_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing
+              </strong>
+              -Â Â RCD Operation Time
+             </p>
+             <p>
+              Â
+             </p>
+             <p>
+              What is the maximum tripping time allowed for a 10mA RCD?
+             </p>
+             <p>
+              Trip =Â
+              <span>
+               RCD trip means the RCD no longer allows electrical energy to flow in the circuit
+              </span>
+             </p>
+             <p>
+              Â  Â  Â Â
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one:
+             </div>
+             <div class="answer">
+              <div class="r0 incorrect">
+               <input checked="checked" disabled="disabled" id="q5134:8_answer0" name="q5134:8_answer" type="radio" value="0"/>
+               <label for="q5134:8_answer0">
+                a. 400 milliseconds
+               </label>
+               <img alt="Incorrect" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_incorrect"/>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:8_answer1" name="q5134:8_answer" type="radio" value="1"/>
+               <label for="q5134:8_answer1">
+                b. 40 milliseconds
+               </label>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:8_answer2" name="q5134:8_answer" type="radio" value="2"/>
+               <label for="q5134:8_answer2">
+                c. 300 milliseconds
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:8_answer3" name="q5134:8_answer" type="radio" value="3"/>
+               <label for="q5134:8_answer3">
+                d. 5 seconds
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is incorrect.
+              </p>
+             </div>
+             <div class="rightanswer">
+              The correct answer is: 40 milliseconds
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback partiallycorrect" id="q9">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             9
+            </span>
+           </h3>
+           <div class="state">
+            Partially correct
+           </div>
+           <div class="grade">
+            Mark 0.50 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:9_:flagged" type="hidden" value="0"/>
+            <input id="q5134:9_:flaggedcheckbox" name="q5134:9_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24099&amp;qubaid=5134&amp;qid=4983&amp;slot=9&amp;checksum=352525d64f36832c5b3aef35a0996294&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:9_:flaggedcheckbox" id="q5134:9_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:9_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q9&amp;id=4983">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:9_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing
+              </strong>
+              -Â Â Fire Protection Methods - Switchboard EntryÂ
+             </p>
+             <p>
+              AS/NZS 3000 requires all wiring systems which enter switchboard enclosures must be arranged so a
+              <strong>
+               'close fit'
+              </strong>
+              Â isÂ maintained to minimise the threat of a fire spreading.
+             </p>
+             <p>
+              How is aÂ
+              <strong>
+               close fitÂ
+              </strong>
+              achieved?
+             </p>
+             <p>
+              Â
+             </p>
+             <p>
+              <em>
+               Refer to AS3000:2017 (A2) 2.9.7
+              </em>
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one or more:
+             </div>
+             <div class="answer">
+              <div class="r0">
+               <input disabled="disabled" id="q5134:9_choice0" name="q5134:9_choice0" type="checkbox" value="1"/>
+               <label for="q5134:9_choice0">
+                a. Wiring enclosure system (conduit) with less than 5mm diameter of free space
+               </label>
+              </div>
+              <div class="r1 correct">
+               <input checked="checked" disabled="disabled" id="q5134:9_choice1" name="q5134:9_choice1" type="checkbox" value="1"/>
+               <label for="q5134:9_choice1">
+                b. Any opening greater than 5mm diameter must be sealed with a fire retardant sealant
+               </label>
+               <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+              </div>
+              <div class="r0">
+               <input disabled="disabled" id="q5134:9_choice2" name="q5134:9_choice2" type="checkbox" value="1"/>
+               <label for="q5134:9_choice2">
+                c. No panel knockout removed.
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:9_choice3" name="q5134:9_choice3" type="checkbox" value="1"/>
+               <label for="q5134:9_choice3">
+                d. All of theseÂ are required to maintain a close fit
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is partially correct.
+              </p>
+             </div>
+             <div class="numpartscorrect">
+              You have correctly selected 1.
+             </div>
+             <div class="rightanswer">
+              The correct answer is: Wiring enclosure system (conduit) with less than 5mm diameter of free space, Any opening greater than 5mm diameter must be sealed with a fire retardant sealant
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que multichoice deferredfeedback correct" id="q10">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             10
+            </span>
+           </h3>
+           <div class="state">
+            Correct
+           </div>
+           <div class="grade">
+            Mark 1.00 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:10_:flagged" type="hidden" value="0"/>
+            <input id="q5134:10_:flaggedcheckbox" name="q5134:10_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24100&amp;qubaid=5134&amp;qid=4982&amp;slot=10&amp;checksum=2e48a75575e811babc5211460a8fd1de&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:10_:flaggedcheckbox" id="q5134:10_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:10_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q10&amp;id=4982">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:10_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing
+              </strong>
+              -Â  Number of final subcircuits per RCD
+             </p>
+             <p>
+              Â
+             </p>
+             <p>
+              What is the maximum number of final subcircuits permitted to be connected to an RCD?
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one:
+             </div>
+             <div class="answer">
+              <div class="r0">
+               <input disabled="disabled" id="q5134:10_answer0" name="q5134:10_answer" type="radio" value="0"/>
+               <label for="q5134:10_answer0">
+                a. 1
+               </label>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:10_answer1" name="q5134:10_answer" type="radio" value="1"/>
+               <label for="q5134:10_answer1">
+                b. 2
+               </label>
+              </div>
+              <div class="r0 correct">
+               <input checked="checked" disabled="disabled" id="q5134:10_answer2" name="q5134:10_answer" type="radio" value="2"/>
+               <label for="q5134:10_answer2">
+                c. 3
+               </label>
+               <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:10_answer3" name="q5134:10_answer" type="radio" value="3"/>
+               <label for="q5134:10_answer3">
+                d. 4
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is correct.
+              </p>
+             </div>
+             <div class="rightanswer">
+              The correct answer is: 3
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que truefalse deferredfeedback correct" id="q11">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             11
+            </span>
+           </h3>
+           <div class="state">
+            Correct
+           </div>
+           <div class="grade">
+            Mark 1.00 out of 1.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:11_:flagged" type="hidden" value="0"/>
+            <input id="q5134:11_:flaggedcheckbox" name="q5134:11_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24101&amp;qubaid=5134&amp;qid=4799&amp;slot=11&amp;checksum=01caf688229db3c2a8c9270c39c53005&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:11_:flaggedcheckbox" id="q5134:11_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:11_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q11&amp;id=4799">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:11_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              Earth Fault-Loop Impedance Testing is not required for a final sub-circuit provided an RCD operates in the manner intended to protect the designated circuit.
+             </p>
+             <p>
+              Â  Â  Â Â
+             </p>
+            </div>
+            <div class="ablock">
+             <div class="prompt">
+              Select one:
+             </div>
+             <div class="answer">
+              <div class="r0 correct">
+               <input checked="checked" disabled="disabled" id="q5134:11_answertrue" name="q5134:11_answer" type="radio" value="1"/>
+               <label for="q5134:11_answertrue">
+                True
+               </label>
+               <img alt="Correct" class="questioncorrectnessicon" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/grade_correct"/>
+              </div>
+              <div class="r1">
+               <input disabled="disabled" id="q5134:11_answerfalse" name="q5134:11_answer" type="radio" value="0"/>
+               <label for="q5134:11_answerfalse">
+                False
+               </label>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="rightanswer">
+              The correct answer is 'True'.
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="que ddimageortext deferredfeedback correct" id="q12">
+          <div class="info">
+           <h3 class="no">
+            Question
+            <span class="qno">
+             12
+            </span>
+           </h3>
+           <div class="state">
+            Correct
+           </div>
+           <div class="grade">
+            Mark 3.00 out of 3.00
+           </div>
+           <div aria-atomic="true" aria-live="assertive" aria-relevant="text" class="questionflag editable">
+            <input name="q5134:12_:flagged" type="hidden" value="0"/>
+            <input id="q5134:12_:flaggedcheckbox" name="q5134:12_:flagged" type="checkbox" value="1"/>
+            <input class="questionflagpostdata" type="hidden" value="qaid=24102&amp;qubaid=5134&amp;qid=8997&amp;slot=12&amp;checksum=3c09f09cb9846aea9c3f935a22ea52c9&amp;sesskey=sJHeFiNCoA&amp;newstate="/>
+            <label for="q5134:12_:flaggedcheckbox" id="q5134:12_:flaggedlabel">
+             <img alt="Not flagged" id="q5134:12_:flaggedimg" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/i/unflagged"/>
+            </label>
+           </div>
+           <div class="editquestion">
+            <a href="https://necatraining.learnbook.com.au/question/question.php?cmid=538&amp;returnurl=%2Fmod%2Fquiz%2Freview.php%3Fattempt%3D1224%23q12&amp;id=8997">
+             <img alt="Edit" class="iconsmall" src="https://necatraining.learnbook.com.au/theme/image.php/learnbook/core/1518474804/t/edit" title="Edit"/>
+             Edit question
+            </a>
+           </div>
+          </div>
+          <div class="content">
+           <div class="formulation clearfix">
+            <h4 class="accesshide">
+             Question text
+            </h4>
+            <input name="q5134:12_:sequencecheck" type="hidden" value="3"/>
+            <div class="qtext">
+             <p>
+              <strong>
+               Installation Testing - Insulation resistance
+              </strong>
+             </p>
+             <p>
+              Drag and drop the markers to the correct location to correctly test the integrity of the insulation of the active and neutral conductors of the power circuit.
+             </p>
+             <p>
+              Each markerÂ represents the location where the test connection is made.
+             </p>
+             <p>
+              By selecting MN your testing point is the connection to the main neutral.
+             </p>
+             <p>
+              By selecting A Line your testing point is the connection to the line side of the main switch.
+             </p>
+             <p>
+              By selecting N your testing point is the connection to neutral of the final subcircuit.
+             </p>
+             <p>
+              By selecting AÂ your testing point is the connection to active of the final subcircuit.
+             </p>
+             <p>
+              By selecting GÂ  your test point is the connection the main earthingÂ conduction of the installation.
+             </p>
+            </div>
+            <div class="ddarea">
+             <div class="droparea">
+              <img alt="Background image for dragging markers onto" class="dropbackground" src="https://necatraining.learnbook.com.au/pluginfile.php/4441/qtype_ddimageortext/bgimage/5134/12/8997/Insulation%20resistance%20testing%202.PNG"/>
+             </div>
+             <div class="dragitems readonly">
+              <div class="dragitemgroup1">
+               <img alt="" class="group1 draghome dragitemhomes4 choice1" src="https://necatraining.learnbook.com.au/pluginfile.php/4441/qtype_ddimageortext/dragimage/5134/12/600/active%20line%20connection.PNG"/>
+               <img alt="" class="group1 draghome dragitemhomes5 choice2" src="https://necatraining.learnbook.com.au/pluginfile.php/4441/qtype_ddimageortext/dragimage/5134/12/601/Main%20neutral%20connection.PNG"/>
+               <img alt="" class="group1 draghome dragitemhomes1 choice3" src="https://necatraining.learnbook.com.au/pluginfile.php/4441/qtype_ddimageortext/dragimage/5134/12/597/Ground%20test%20point.PNG"/>
+               <img alt="" class="group1 draghome dragitemhomes2 choice4 infinite" src="https://necatraining.learnbook.com.au/pluginfile.php/4441/qtype_ddimageortext/dragimage/5134/12/598/Neutral%20test%20point.PNG"/>
+               <img alt="" class="group1 draghome dragitemhomes3 choice5 infinite" src="https://necatraining.learnbook.com.au/pluginfile.php/4441/qtype_ddimageortext/dragimage/5134/12/599/Active%20test%20point.PNG"/>
+              </div>
+             </div>
+             <div class="dropzones">
+             </div>
+             <input id="q5134_12_p1" name="q5134:12_p1" type="hidden" value="3"/>
+             <input id="q5134_12_p2" name="q5134:12_p2" type="hidden" value="4"/>
+             <input id="q5134_12_p3" name="q5134:12_p3" type="hidden" value="5"/>
+            </div>
+           </div>
+           <div class="outcome clearfix">
+            <h4 class="accesshide">
+             Feedback
+            </h4>
+            <div class="feedback">
+             <div class="specificfeedback">
+              <p>
+               Your answer is correct.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <input name="sesskey" type="hidden" value="sJHeFiNCoA"/>
+         <div class="submitbtns">
+          <input class="questionflagsavebutton" name="savingflags" type="submit" value="Save the state of the flags"/>
+         </div>
+        </div>
+       </form>
+       <div class="submitbtns">
+        <a href="https://necatraining.learnbook.com.au/mod/quiz/view.php?id=538">
+         Finish review
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="push">
+  </div>
+  <!--  END BOOTSTRAP RESPONSIVE -->
+  <!-- START OF FOOTER -->
+  <!-- END OF FOOTER -->
+ </body>
+</html>
+<script type="text/javascript">
+ //<![CDATA[
+var require = {
+    baseUrl : 'https://necatraining.learnbook.com.au/lib/requirejs.php/1518474804/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+
+    paths: {
+        jquery: 'https://necatraining.learnbook.com.au/lib/javascript.php/1518474804/lib/jquery/jquery-1.11.3.min',
+        jqueryui: 'https://necatraining.learnbook.com.au/lib/javascript.php/1518474804/lib/jquery/ui-1.11.4/jquery-ui.min',
+        jqueryprivate: 'https://necatraining.learnbook.com.au/lib/javascript.php/1518474804/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://necatraining.learnbook.com.au/lib/javascript.php/1518474804/lib/requirejs/require.min.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+ //<![CDATA[
+require(['core/first'], function() {
+;
+require(["core/log"], function(amd) { amd.setConfig({"level":"warn"}); });
+});
+//]]>
+</script>
+<script type="text/javascript">
+ //<![CDATA[
+M.yui.add_module({"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.mathjax.org\/mathjax\/2.5-latest\/MathJax.js?delayStartupUntil=configured"},"core_question_engine":{"name":"core_question_engine","fullpath":"https:\/\/necatraining.learnbook.com.au\/lib\/javascript.php\/1518474804\/question\/qengine.js","requires":["node","event"]},"mod_quiz":{"name":"mod_quiz","fullpath":"https:\/\/necatraining.learnbook.com.au\/lib\/javascript.php\/1518474804\/mod\/quiz\/module.js","requires":["base","dom","event-delegate","event-key","core_question_engine","moodle-core-formchangechecker"]}});
+
+//]]>
+</script>
+<script src="https://necatraining.learnbook.com.au/lib/javascript.php/1518474804/blocks/slideshow/js/responsiveslides.min.js" type="text/javascript">
+</script>
+<script src="https://necatraining.learnbook.com.au/theme/javascript.php/learnbook/1518474804/footer" type="text/javascript">
+</script>
+<script type="text/javascript">
+ //<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","cancel":"Cancel","changesmadereallygoaway":"You have made changes. Are you sure you want to navigate away and lose your changes?","morehelp":"More help","loadinghelp":"Loading...","yes":"Yes","confirm":"Confirm","no":"No","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} alias\/shortcut files that use this file as their source","select":"Select"},"question":{"flagged":"Flagged"},"quiz":{"functiondisabledbysecuremode":"That functionality is currently disabled","startattempt":"Start attempt","timesup":"Time is up!"},"admin":{"confirmation":"Confirmation"}};
+//]]>
+</script>
+<script type="text/javascript">
+ //<![CDATA[
+var siteadminexpansion = {"id":"expandable_branch_71_siteadministration","key":"siteadministration","text":"Site administration","shorttext":null,"title":null,"helpbutton":null,"action":{},"icon":{"pix":"i\/navigationitem","component":"moodle","attributes":{"class":"smallicon navicon","alt":""}},"type":71,"nodetype":1,"collapse":false,"forceopen":false,"classes":["root_node"],"children":{},"isactive":false,"hidden":false,"display":true,"preceedwithhr":true,"mainnavonly":false,"forcetitle":false,"parent":{"id":"settingsnav","key":null,"text":null,"shorttext":null,"title":null,"helpbutton":null,"action":null,"icon":null,"type":null,"nodetype":1,"collapse":false,"forceopen":true,"classes":[],"children":{},"isactive":false,"hidden":false,"display":true,"preceedwithhr":false,"mainnavonly":false,"forcetitle":false,"parent":null,"hideicon":false,"isexpandable":false,"includesectionnum":false},"hideicon":true,"isexpandable":false,"includesectionnum":false};
+//]]>
+</script>
+<script type="text/javascript">
+ //<![CDATA[
+(function() {M.util.load_flowplayer();
+setTimeout("fix_column_widths()", 20);
+ M.util.js_pending('random5ae14046b6df71'); Y.use('core_question_flags', function(Y) { M.core_question_flags.init(Y, "https:\/\/necatraining.learnbook.com.au\/question\/toggleflag.php", [{"src":"https:\/\/necatraining.learnbook.com.au\/theme\/image.php\/learnbook\/core\/1518474804\/i\/unflagged","title":"Flag this question for future reference","alt":"Not flagged"},{"src":"https:\/\/necatraining.learnbook.com.au\/theme\/image.php\/learnbook\/core\/1518474804\/i\/flagged","title":"Remove flag","alt":"Flagged"}], ["Flag question","Remove flag"]);  M.util.js_complete('random5ae14046b6df71'); });
+ M.util.js_pending('random5ae14046b6df72'); Y.use('mod_quiz', function(Y) { M.mod_quiz.nav.init(Y);  M.util.js_complete('random5ae14046b6df72'); });
+Y.use("moodle-block_navigation-navigation",function() {M.block_navigation.init_add_tree({"id":"5","instance":"5","candock":false});
+});
+M.util.help_popups.setup(Y);
+Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
+});
+M.util.init_skiplink(Y);
+M.util.init_block_hider(Y, {"id":"inst97","title":"Learnbook Panel","preference":"block97hidden","tooltipVisible":"Hide Learnbook Panel block","tooltipHidden":"Show Learnbook Panel block"});
+M.util.init_block_hider(Y, {"id":"inst5","title":"Administration","preference":"block5hidden","tooltipVisible":"Hide Administration block","tooltipHidden":"Show Administration block"});
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"en"});
+});
+Y.use("moodle-qtype_ddimageortext-dd",function() {M.qtype_ddimageortext.init_question({"drops":{"1":{"no":"1","text":"","group":"1","xy":["112","136"],"fieldname":"q5134:12_p1"},"2":{"no":"2","text":"","group":"1","xy":["127","12"],"fieldname":"q5134:12_p2"},"3":{"no":"3","text":"","group":"1","xy":["117","64"],"fieldname":"q5134:12_p3"}},"topnode":"div#q12 div.ddarea","readonly":true});
+});
+ M.util.js_pending('random5ae14046b6df77'); Y.use('mod_quiz', function(Y) { M.mod_quiz.init_review_form(Y);  M.util.js_complete('random5ae14046b6df77'); });
+ M.util.js_pending('random5ae14046b6df78'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5ae14046b6df78'); });
+})();
+//]]>
+</script>
+<!--  ecreators analytics -->
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53862949-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script id="__bs_script__">
+ //<![CDATA[
+    // document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.12.8.js'><\/script>".replace("HOST", location.hostname));
+//]]>
+</script>
