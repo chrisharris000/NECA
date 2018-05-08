@@ -1,5 +1,7 @@
 #!/usr/bin/env python3.5
+# -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
+
 
 '''
 Removes side blocks and other unecessary features from a moodle page
@@ -28,17 +30,10 @@ for div in soup.find_all("div", {"class":"lb_submenu"}):
 for div in soup.find_all("div", {"id":"block-region-side-pre"}):
     div.decompose()
 
-'''#remove quiz stats (time, %, etc)
+#remove quiz stats (time, %, etc)
 
-#NOTE: Not working yet
-for div in soup.find_all("div", _class = "quizreviewsummary"):
+for div in soup.find_all("table", {"class":"quizreviewsummary"}):
     div.decompose()
-
-#removes finish review button
-
-#NOTE: Not working yet
-for div in soup.find_all("div", {"id":"submitbtns"}):
-    div.decompose()'''
 
 #removes footer
 for div in soup.find_all("div", {"id":"page-footer"}):
