@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.5
 from bs4 import BeautifulSoup
 import requests
+import openpyxl
+import warnings
 
 '''
 
@@ -40,7 +42,9 @@ def scrape_document(uoc):
             data = (k_and_s_table.find_all("tr"))
             for i in range(len(data)):
                 req_skill_knowledge += data[i].get_text()
-    print(req_skill_knowledge)
+
+    return [unit_code, unit_name, assess_tool_ver, range_statement,
+            asp_of_evidence, elem_perf_criteria, req_skill_knowledge]
 
 
 def extract_table_data(table):
@@ -48,6 +52,13 @@ def extract_table_data(table):
     for row in table.find_all("td"):
         s += row.get_text()
     return s
+
+def export_data(data):
+    book = openpyxl.load_workbook("../../UEXXXXXXX_Assessment_Mapping_Tool v1.1 MASTER PH.xlsx")
+    print(book.get_sheet_names())
+    pass
+
+
 
 uoc_names = ["UEENEEK142A"]
 document_title = ''
@@ -58,5 +69,7 @@ while (url):
     url = input("Enter Unit of Competency Code e.g. UEENEEK142A: ")
 '''
 for unit in uoc_names:
-    scrape_document(unit)
+    warnings.filterwarnings("ignore")
+    data = scrape_document(unit)
+    export_data(data)
 print("Process Complete")
