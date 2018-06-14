@@ -2,10 +2,18 @@
 from bs4 import BeautifulSoup
 import requests
 import openpyxl
+from openpyxl.styles.borders import Border, Side
 import warnings
 
-'''
-
+''' 
+data breakdown (relevant for output of scrape_document/input for export data):
+data[0] = unit code e.g. UEENEEK142A
+data[1] = unit name e.g. Apply environmentally and sustainable procedures in the energy sector
+data[2] = assessment tool version
+data[3] = range statement
+data[4] = ciritcal aspect of evidence
+data[5] = elements and performance criteria
+data[6] = required skill and knowledge
 '''
 
 def scrape_document(uoc):
@@ -53,23 +61,51 @@ def extract_table_data(table):
         s += row.get_text()
     return s
 
-def export_data(data):
-    book = openpyxl.load_workbook("../../UEXXXXXXX_Assessment_Mapping_Tool v1.1 MASTER PH.xlsx")
-    print(book.get_sheet_names())
-    pass
+def export_data(data, input_location, output_location):
+    thin_border = Border(left=Side(style='thin'), 
+                     right=Side(style='thin'), 
+                     top=Side(style='thin'), 
+                     bottom=Side(style='thin'))
+    
+    book = openpyxl.load_workbook(input_location)
+    curr_sheet = book.get_sheet_by_name("Sheet1")
+    curr_sheet.cell(row = 3, column = 2).value = data[0]
+    curr_sheet.cell(row = 4, column = 2).value = data[1]
+    curr_sheet.cell(row = 7, column = 2).value = data[2]
+    curr_sheet.cell(row = 8, column = 2).value = data[3]
+    curr_sheet.cell(row = 9, column = 2).value = data[4]
+    curr_sheet.cell(row = 13, column = 1).value = data[5]
+    curr_sheet.cell(row = 15, column = 1).value = data[0] + ' - ' + data[1]
 
+    for row in range(2,10):
+        thicken_border(2,8, row, curr_sheet, thin_border)
+    thicken_border(1,9, 15, curr_sheet, thin_border)
 
+    output_file = output_location + data[2] + "MODIFIED.xlsx"
+    book.save(output_file)
 
-uoc_names = ["UEENEEK142A"]
+def thicken_border(start,end, row, curr_sheet, style):
+    for i in range(start,end):
+        curr_sheet.cell(row = row, column = i).border = style
+
+uoc_names = []
 document_title = ''
-'''
+
 url = input("Enter Unit of Competency Code e.g. UEENEEK142A: ")
 while (url):
     uoc_names.append(url)
     url = input("Enter Unit of Competency Code e.g. UEENEEK142A: ")
-'''
+
 for unit in uoc_names:
     warnings.filterwarnings("ignore")
     data = scrape_document(unit)
-    export_data(data)
+    print("Enter file path to location where template is stored")
+    print("Example: C:/Users/harri/Documents/UEXXXXXXX_Assessment_Mapping_Tool v1.1 MASTER PH.xlsx")
+    template_location = input("Location: ")
+
+    print("Enter file path to location where output is stored")
+    print("Example: C:/Users/harri/Documents/")
+    output_location = input("Location: ")
+    export_data(data, template_location, output_location)
+    
 print("Process Complete")
