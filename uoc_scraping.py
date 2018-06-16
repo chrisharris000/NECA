@@ -17,6 +17,7 @@ data[6] = required skill and knowledge
 '''
 
 def scrape_document(uoc):
+    active = 0 #used to 'turn on/off' features
     page = requests.get("http://training.gov.au/Training/Details/" + uoc)
 
     soup = BeautifulSoup(page.content,'html.parser')
@@ -36,21 +37,23 @@ def scrape_document(uoc):
             range_statement = extract_table_data(range_table)
 
         if e.string == "Evidence Guide":
-            evidence_guide_table = e.find_next_siblings()[4]
+            evidence_guide_table = e.find_next_siblings()[0]          
             asp_of_evidence = extract_table_data(evidence_guide_table)
+            start = asp_of_evidence.index("Critical aspects of evidence required to demonstrate competency in this unit")
+            end = asp_of_evidence.index("Context of and specific resources for assessment")
+            asp_of_evidence = asp_of_evidence[start:end]
 
-        if e.string == "Elements and Performance Criteria":
+        if e.string == "Elements and Performance Criteria" and active:
             perf_criteria_table = e.find_next_siblings()[0]
             data = (perf_criteria_table.find_all("tr"))
             for i in range(len(data)):
                 elem_perf_criteria += data[i].get_text()
 
-        if e.string == "Required Skills and Knowledge":
+        if e.string == "Required Skills and Knowledge" and active:
             k_and_s_table = e.find_next_siblings()[0]
             data = (k_and_s_table.find_all("tr"))
             for i in range(len(data)):
                 req_skill_knowledge += data[i].get_text()
-
     return [unit_code, unit_name, assess_tool_ver, range_statement,
             asp_of_evidence, elem_perf_criteria, req_skill_knowledge]
 
@@ -71,11 +74,13 @@ def export_data(data, input_location, output_location):
     curr_sheet = book.get_sheet_by_name("Sheet1")
     curr_sheet.cell(row = 3, column = 2).value = data[0]
     curr_sheet.cell(row = 4, column = 2).value = data[1]
+    curr_sheet.cell(row = 5, column = 2).value = "UEE11"
     curr_sheet.cell(row = 7, column = 2).value = data[2]
     curr_sheet.cell(row = 8, column = 2).value = data[3]
     curr_sheet.cell(row = 9, column = 2).value = data[4]
     curr_sheet.cell(row = 13, column = 1).value = data[5]
     curr_sheet.cell(row = 15, column = 1).value = data[0] + ' - ' + data[1]
+    curr_sheet.cell(row = 45, column = 1).value = data[6]
 
     for row in range(2,10):
         thicken_border(2,8, row, curr_sheet, thin_border)
@@ -88,24 +93,21 @@ def thicken_border(start,end, row, curr_sheet, style):
     for i in range(start,end):
         curr_sheet.cell(row = row, column = i).border = style
 
-uoc_names = []
-document_title = ''
 
-url = input("Enter Unit of Competency Code e.g. UEENEEK142A: ")
-while (url):
-    uoc_names.append(url)
-    url = input("Enter Unit of Competency Code e.g. UEENEEK142A: ")
+document_title = ""
 
-for unit in uoc_names:
-    warnings.filterwarnings("ignore")
-    data = scrape_document(unit)
-    print("Enter file path to location where template is stored")
-    print("Example: C:/Users/harri/Documents/UEXXXXXXX_Assessment_Mapping_Tool v1.1 MASTER PH.xlsx")
-    template_location = input("Location: ")
+unit = input("Enter Unit of Competency Code e.g. UEENEEK142A: ")
 
-    print("Enter file path to location where output is stored")
-    print("Example: C:/Users/harri/Documents/")
-    output_location = input("Location: ")
-    export_data(data, template_location, output_location)
-    
+warnings.filterwarnings("ignore")
+data = scrape_document(unit)
+
+print("Enter file path to location where template is stored")
+print("Example: C:/Users/harri/Documents/UEXXXXXXX_Assessment_Mapping_Tool v1.1 MASTER PH.xlsx")
+template_location = input("Location: ")
+
+print("Enter file path to location where output is stored")
+print("Example: C:/Users/harri/Documents/")
+output_location = input("Location: ")
+export_data(data, template_location, output_location)
+
 print("Process Complete")
