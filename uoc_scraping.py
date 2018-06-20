@@ -5,7 +5,16 @@ import openpyxl
 from openpyxl.styles.borders import Border, Side
 import warnings
 
-''' 
+'''
+Program Overview:
+Given a unit of competency (for example, UEENEEE102A), program scrapes the range
+statement, aspects of evidence, elements and performance criteria and requires skills
+and knowledge. It then pastes them into the correct cells of a template spreadsheet
+
+Scraping elements and performance criteria, and required skills and knowledge
+works correctly, but pasting directly into their correct cells is trivial,
+and is left as an exercise for the reader.
+
 data breakdown (relevant for output of scrape_document/input for export data):
 data[0] = unit code e.g. UEENEEK142A
 data[1] = unit name e.g. Apply environmentally and sustainable procedures in the energy sector
@@ -95,11 +104,13 @@ def thicken_border(start,end, row, curr_sheet, style):
 
 
 document_title = ""
-
-unit = input("Enter Unit of Competency Code e.g. UEENEEK142A: ")
+units = []
+unit = "a"
+while unit:
+    unit = input("Enter Unit of Competency Code e.g. UEENEEK142A: ")
+    units.append(unit)
 
 warnings.filterwarnings("ignore")
-data = scrape_document(unit)
 
 print("Enter file path to location where template is stored")
 print("Example: C:/Users/harri/Documents/UEXXXXXXX_Assessment_Mapping_Tool v1.1 MASTER PH.xlsx")
@@ -108,6 +119,9 @@ template_location = input("Location: ")
 print("Enter file path to location where output is stored")
 print("Example: C:/Users/harri/Documents/")
 output_location = input("Location: ")
-export_data(data, template_location, output_location)
+
+for unit in units:
+    data = scrape_document(unit)
+    export_data(data, template_location, output_location)
 
 print("Process Complete")
